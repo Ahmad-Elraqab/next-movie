@@ -1,0 +1,98 @@
+@import '../styles/app_assets.sass'
+
+.footer
+    @include flex($direction:row, $main: strat, $cross: stretch)
+    height: 560px
+    width: 100%
+    background-color: $primary-color
+    max-lines: 3
+    white-space: nowrap
+    overflow: hidden
+    .footerLeft
+        background-color: #3D3D3D
+        width: 560px
+        height: 100%
+        padding: 94px 105px
+        display: block
+        overflow: hidden
+
+        span
+            color: #FFF
+            line-height: 88px
+            font-size: 64px
+            font-weight: 500
+            margin-bottom: 32px
+
+        .fd
+            color: #E6E6E6
+            line-height: 32px
+            font-size: 16px
+            white-space: normal
+            font-weight: regular
+            margin-bottom: 40px
+
+        .ffd
+            color: #E6E6E6
+            line-height: 24px
+            font-size: 16px
+            font-weight: bold
+            margin-bottom: 24px
+
+        .news
+            @include flex($direction:row, $main: space-between, $cross: center)
+            width: 282px
+            height: 64px
+            border-radius: 8px
+            padding: 8px 9px 8px 16px
+            background-color: #525252
+
+            p
+                color: #9A9AB0
+                line-height: 32px
+                font-weight: regular
+                font-size: 16px
+
+            .newsButton
+                padding: 12px
+                background-color: #FED530
+                height: 48px
+                width: 48px
+                border-radius: 8px
+
+    .footerRight
+        background-color: #2E2E2E
+        height: 100%
+        width: 880px
+        padding: 133px 115px 112px 61px
+        @include flex($main: space-between, $cross: start)
+
+        .footerGrid
+            grid-column-gap: 160px
+            grid-row-gap: 24px
+            display: grid
+            grid-template-columns: auto auto auto
+            overflow: wrap
+
+        .footerGridItem
+            color: #E6E6E6
+            font-size: 16px
+            line-height: 32px
+            font-weight: regular
+
+        .footerGridTitle
+            color: #fff
+            font-size: 16px
+            line-height: 24px
+            font-weight: bold
+
+        .footerBase
+            @include flex($direction:row, $main: space-between, $cross: center)
+            gap: 24px
+
+            .base
+                @include flex($direction:row, $main: start, $cross: center)
+                gap: 8px
+                line-height: 24px
+                color: #fff
+                font-weight: regular
+                font-size: 14px

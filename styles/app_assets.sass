@@ -1,0 +1,80 @@
+$primary-color: #1E1E1E
+$shadow-color: #333333
+$gradient-color: linear-gradient(270deg,black, rgb(0, 0, 0,0))
+
+@mixin flex($direction: column, $main: start, $cross: start)
+
+  display: flex
+  flex-direction: $direction
+  justify-content: $main
+  align-items: $cross
+
+.loader
+  height: 100vh
+
+.lds-ripple
+  display: inline-block
+  position: relative
+  width: 80px
+  height: 80px
+
+.lds-ripple div
+  position: absolute
+  border: 4px solid #ff0000
+  opacity: 1
+  border-radius: 50%
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite
+
+  &:nth-child(2)
+    animation-delay: -0.5s
+
+.error
+  @include flex($main:center , $cross:center )
+  font-size: 32px
+  height: 100vh
+  color: #FFF
+  font-family: 'Courier New', Courier, monospace
+  font-weight: 500
+
+.shimmerEffect
+  color: grey
+  display: inline-block
+         /* adding gradients */
+  -webkit-mask: linear-gradient(120deg, #000 25%, #0005, #000 75%) right/250% 100%
+         /* shimmer effect animation */
+  animation: shimmer 2.5s infinite
+  background-repeat: no-repeat
+  width: 100%
+
+@keyframes shimmer
+  100%
+    -webkit-mask-position: left
+
+@keyframes lds-ripple
+  0%
+    top: 36px
+    left: 36px
+    width: 0
+    height: 0
+    opacity: 0
+
+  4.9% 
+    top: 36px
+    left: 36px
+    width: 0
+    height: 0
+    opacity: 0
+
+  5%
+    top: 36px
+    left: 36px
+    width: 0
+    height: 0
+    opacity: 1
+
+  100%
+    top: 0px
+    left: 0px
+    width: 72px
+    height: 72px
+    opacity: 0

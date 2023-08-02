@@ -1,0 +1,65 @@
+@import '../styles/app_assets.sass'
+
+@mixin navDefaultData()
+    font-size: 16px
+    cursor: pointer
+    margin-right: 48px
+    white-space: nowrap
+    overflow: hidden
+    line-height: 34px
+
+.navbar
+    @include flex($direction: row, $main: start ,$cross: center)
+    height: 104px
+    width: 100%
+    padding: 28px 103px
+
+    nav
+        @include flex($direction: row, $main: start ,$cross: center)
+        width: 100%
+
+        .navSearch
+
+            @include flex($direction: row, $main: start ,$cross: center)
+            margin-left: auto
+            .profileAvatar
+                min-height: 48px
+                min-width: 48px
+                display: block
+                border-radius: 50%
+                margin-right: 16px
+                background-color: $primary-color
+                margin-right: 16px
+                margin-left: 48px
+
+            .navProfile
+                @include flex($direction: row, $main: start ,$cross: center)
+                font-size: 16
+                color: #fff
+                font-weight: bold
+                line-height: 24px
+                white-space: nowrap
+                overflow: hidden
+        ul
+            list-style-type: none
+            list-style: none
+            display: flex
+
+        h4
+            font-size: 32px
+            font-weight: bold
+            color: #fff
+
+        .navActive
+            @include navDefaultData()
+            font-weight: bold
+            color: #fff
+            border-bottom: solid 4px #FED530
+
+        .navInActive
+            @include navDefaultData()
+            font-weight: regular
+            color: #E6E6E6
+
+            &:hover
+                border-bottom: solid 4px #FED530

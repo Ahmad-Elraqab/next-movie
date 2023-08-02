@@ -1,0 +1,119 @@
+@import '../styles/app_assets.sass'
+
+.app
+  @include flex($main: start ,$cross: center)
+  width: 100%
+  min-height: 100vh
+  background-color: $primary-color
+  // cursor: url('/PlayButton.svg')
+  .mainBodyBox
+    height: 100%
+    width: 100%
+
+  .firstContainer
+    @include flex($main: start, $cross: start)
+    background-color: $shadow-color
+    height: 770px
+    width: 100%
+
+    .shadowBox
+      @include flex($main: start, $cross: center)
+      height: 100%
+      width: 100%
+      background: $gradient-color
+
+      .playButton
+        @include flex($direction: row, $main: center, $cross: center)
+        margin-top: 9.5rem
+        gap: 9.25rem
+
+        div
+          width: 37.5rem
+          p
+            color: #fff
+            font-size: 16px
+            font-weight: regular
+            line-height: 32px
+
+          span
+            color: #fff
+            font-size: 72px
+            font-weight: bold
+            line-height: 96px
+
+      .searchBox
+        @include flex($main: start, $cross: start)
+        line-height: 64px
+        font-weight: bold
+        font-size: 48px
+        color: #FFF
+
+        .searchSubmitButton
+          @include flex($main: center, $cross: center)
+          border-radius: 27px
+          background: #FED530
+          margin-top: 19px
+          width: 161px
+          height: 54px
+          p
+            color: #000
+            font-size: 21px
+            font-weight: 700
+            line-height: 24px
+
+        $classes: searchTypeBoxRow, searchTypeBox
+
+        .searchTypeBox[type='col']
+          @include flex($main: start, $cross: start)
+          .inputTheatre
+            width: 600px
+          .inputDate
+            width: 300px !important
+
+        .searchTypeBox[type='row']
+          @include flex($direction: row, $main: start, $cross: center)
+          .inputTheatre
+            width: 400px
+          .inputDate
+            width: 176px
+
+        @each $class in $classes
+          .#{$class}
+
+            $tags: Theatre , Date
+            @each $tag in $tags
+
+              .input#{$tag}
+                @include flex($direction: row, $main: start, $cross: center)
+                background-color: #fff
+                margin-top: 19px
+                border-radius: 40px
+                height: 54px
+                position: relative
+                margin-right: 10px
+                overflow: hidden
+
+                @if $tag == 'Theatre'
+                  padding-left: 60px
+                  margin-right: 10px
+
+                @else if $tag == 'Date'
+                  padding-left: 54px
+                  -webkit-appearance: none
+
+                input
+                  height: 54px
+                  width: 100%
+                  border: none
+                  outline: none
+
+                ::focus
+                  border: none
+                  outline: none
+
+                span
+                  position: absolute !important
+                  width: 21px !important
+                  height: 21px !important
+                  left: 22px
+                  top: 16px
